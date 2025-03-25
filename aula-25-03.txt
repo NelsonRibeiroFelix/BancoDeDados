@@ -18,5 +18,6 @@ SELECT *
 FROM movies AS m
 	RIGHT JOIN directors AS d on d.id = m.director_id
 
+Teste
 
 
