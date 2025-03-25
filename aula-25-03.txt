@@ -1,0 +1,22 @@
+-- Liste todos os diretores e os filmes que eles dirigiram 
+SELECT *
+FROM movies as m JOIN directors as d
+	on d.id = m.director_id;
+-- Liste todos os filmes e seus tickets vendidos
+SELECT *
+FROM movies as m 
+	JOIN tickets as t ON m.id = t.movie_id;
+-- Liste todos os filmes, seus diretores e os tickets vendidos
+SELECT *
+FROM movies as m 
+	JOIN directors as d ON d.id = m.director_id
+    join tickets as t ON m.id = t.movie_id;
+
+-- Exemplo de LEFT JOIN
+
+SELECT *
+FROM movies AS m
+	RIGHT JOIN directors AS d on d.id = m.director_id
+
+
+
