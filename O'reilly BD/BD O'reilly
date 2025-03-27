@@ -1,0 +1,20 @@
+-- Primeira instrução (select)
+SELECT * 
+FROM CUSTOMER;
+
+-- Segunda instrução (select com apenas duas colunas especificas)
+SELECT CUSTOMER_ID, NAME 
+FROM CUSTOMER;
+
+--instrução (select)
+SELECT * 
+FROM product; 
+
+--Coluna calculada (select calculo)
+-- Suponhamos que quiséssimos gerar uma coluna calculada chamada "TAXED_PRICE" em que o preço fosse 7% mais alto que em "PRICE".
+SELECT 
+PRODUCT_ID,
+DESCRIPTION,
+PRICE,
+PRICE * 1.07 AS TAXED_PRICE
+FROM PRODUCT;
