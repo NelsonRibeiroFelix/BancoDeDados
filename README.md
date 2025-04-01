@@ -1,1 +1,1 @@
-# bd
+-- Nesse repositório você vai encontrar minhas aulas de banco de dados do meu curso de ADS, entre outros bancos de dados usados nos meus exercícios com o livro de "Introdução à linguagem SQL"
