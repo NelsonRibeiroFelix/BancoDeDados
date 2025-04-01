@@ -34,3 +34,28 @@ FROM pedidos as pe
 
 --  Contar o número de pedidos feitos por dia
 
+--  Listar os produtos mais vendidos
+
+--  Encontrar o cliente que mais fez pedidos
+
+--  Listar os pedidos e os clientes que os fizeram, incluindo pedidos sem clientes
+
+--  Listar os produtos e o total de vendas por produto
+
+--  Calcular a média de quantidade de produtos por pedido
+
+--  Listar os pedidos ordenados por data (mais recentes primeiro)
+
+--  Contar quantos clientes possuem telefone cadastrado
+
+--  Encontrar o cliente que gastou mais dinheiro em pedidos.
+
+-- Listar os 5 produtos mais vendidos.
+
+-- Listar os clientes que já fizeram pedidos e o número de pedidos de cada um.
+
+-- Encontrar a data com mais pedidos realizados
+
+-- Calcular a média de valor gasto por pedido
+
+
