@@ -1,0 +1,67 @@
+CREATE TABLE Organizadores (
+    id INT CHAVE PRIMÁRIA INCREMENTO_AUTO,
+    nome VARCHAR(255) NÃO NULO,
+    contato_email VARCHAR(255) NÃO NULO ÚNICO,
+    telefone VARCHAR(20),
+    carga VARCHAR(100)
+);
+
+CRIAR TABELA Eventos (
+    id INT CHAVE PRIMÁRIA INCREMENTO_AUTO,
+    nome_evento VARCHAR(255) NÃO NULO,
+    descrição TEXTO,
+    data_inicio DATA NÃO NULA,
+    data_fim DATA NÃO NULA,
+    local VARCHAR(255) NÃO NULO,
+    organizador_id INT,
+    tipo_evento VARCHAR(100),
+    CHAVE ESTRANGEIRA (organizador_id) REFERÊNCIAS Organizadores(id)
+);
+
+CRIAR TABELA Participantes (
+    id INT CHAVE PRIMÁRIA INCREMENTO_AUTO,
+    nome VARCHAR(255) NÃO NULO,
+    e-mail VARCHAR(255) NÃO NULO ÚNICO,
+    telefone VARCHAR(20),
+    data_inscricao DATA NÃO NULA
+);
+
+CREATE TABLE Inscrições (
+    id INT CHAVE PRIMÁRIA INCREMENTO_AUTO,
+    id_evento INT,
+    id_participante INT,
+    data_inscricao DATA NÃO NULA,
+    status_pagamento VARCHAR(50),
+    REFERÊNCIAS DE CHAVE ESTRANGEIRA (id_evento) Eventos(id),
+    CHAVE ESTRANGEIRA (id_participante) REFERÊNCIAS Participantes(id)
+);
+
+INSERT INTO Organizadores (nome, contato_email, telefone, cargo)
+VALORES
+('João Silva', 'joao@evento.com', '9999-9999', 'Coordenador'),
+('Maria Souza', 'maria@evento.com', '8888-8888', 'Palestrante'),
+('Pedro Almeida', 'pedro@evento.com', '7777-7777', 'Organizador'),
+('Ana Costa', 'ana@evento.com', '6666-6666', 'Palestrante');
+
+INSERT INTO Eventos (nome_evento, descrição, data_inicio, data_fim, local, organizador_id, tipo_evento)
+VALORES
+('Workshop de Inovação', 'Workshop sobre novas tecnologias', '2025-06-01', '2025-06-03', 'Centro de Convenções', 1, 'Workshop'),
+('Palestra sobre Empreendedorismo', 'Palestra com grandes nomes do mercado', '2025-06-10', '2025-06-10', 'Auditório Principal', 2, 'Palestra'),
+('Conferência de TI', 'Conferência internacional sobre tecnologia da informação', '2025-07-01', '2025-07-03', 'Palácio de Convenções', 3, 'Conferência'),
+('Seminário de Sustentabilidade', 'Seminário sobre práticas ambientais ambientais', '2025-08-10', '2025-08-11', 'Hotel Eco', 4, 'Seminário');
+
+INSERT INTO Participantes (nome, email, telefone, data_inscricao)
+VALORES
+('Carlos Oliveira', 'carlos@dominio.com', '9876-5432', '2025-04-15'),
+('Fernanda Costa', 'fernanda@dominio.com', '9867-1234', '2025-04-16'),
+('Lucas Silva', 'lucas@dominio.com', '9356-7890', '2025-04-17'),
+('Juliana Pereira', 'juliana@dominio.com', '9456-4567', '2025-04-18'),
+('Eduardo Rocha', 'eduardo@dominio.com', '9267-2345', '2025-04-19');
+
+INSERT INTO Inscrições (id_evento, id_participante, data_inscricao, status_pagamento)
+VALORES
+(1, 1, '2025-04-15', 'Pago'),
+(1, 2, '2025-04-16', 'Pendente'),
+(2, 3, '2025-04-17', 'Pago'),
+(2, 4, '2025-04-18', 'Pendente'),
+(3, 5, '2025-04-19', 'Pago');
